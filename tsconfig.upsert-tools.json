@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "lib": ["esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "module": "Node16", 
+        "moduleResolution": "Node16", 
+        "resolveJsonModule": true,
+        "outDir": "./dist",
+        "target": "ES6"
+    },
+    "include": [
+        "app/api/tools/upsert-tools.ts",
+        "app/api/tools/index.ts",
+        "app/api/openai.ts"
+        // "app/api/declarations.d.ts" // Include custom declarations if necessary
+    ],
+    "exclude": ["node_modules"]
+}
