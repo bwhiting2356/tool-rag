@@ -1,5 +1,16 @@
 import { tools } from '../tools';
-import { getOnlyToolNamesAndDescriptions } from '../tools/upsert-tools';
+
+export const getOnlyToolNamesAndDescriptions = (tools: any) => {
+    const toolNamesAndDescriptions = [];
+    for (const toolName in tools) {
+        const toolDefinition = tools[toolName].function;
+        toolNamesAndDescriptions.push({
+            name: toolDefinition.name,
+            description: toolDefinition.description,
+        });
+    }
+    return toolNamesAndDescriptions;
+};
 
 export async function GET() {
     const toolNamesAndDescriptions = getOnlyToolNamesAndDescriptions(tools);

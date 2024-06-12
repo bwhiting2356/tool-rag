@@ -15,19 +15,6 @@ import { createHash } from 'crypto';
 
 import { tools } from '.';
 import { getEmbedding } from './openai';
-import { ChatCompletionTool } from 'openai/resources/index.mjs';
-
-export const getOnlyToolNamesAndDescriptions = (tools: any) => {
-    const toolNamesAndDescriptions = [];
-    for (const toolName in tools) {
-        const toolDefinition = tools[toolName].function;
-        toolNamesAndDescriptions.push({
-            name: toolDefinition.name,
-            description: toolDefinition.description,
-        });
-    }
-    return toolNamesAndDescriptions;
-};
 
 async function upsertTools() {
     const upsertsArray: { id: string; values: number[]; metadata: ToolMetadata }[] = [];
