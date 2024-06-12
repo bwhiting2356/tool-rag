@@ -10,6 +10,6 @@ While modern LLMs come with extensive context windows, enabling them to process 
 
 ### Demo
 
-<img src="https://github.com/bwhiting2356/memory-bot/assets/16016903/028e01c7-fcab-4cf3-aa26-efff5e05d865" alt="Tool RAG" width="300"/>
+<img src="(https://github.com/bwhiting2356/tool-rag/assets/16016903/8cc102ec-e334-4677-87c7-027d792ef67" alt="Tool RAG" width="300"/>
 
 Check out the deployed prototype [here](https://tool-rag.vercel.app/).
