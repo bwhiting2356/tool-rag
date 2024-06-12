@@ -10,13 +10,14 @@ export const capitalizeWords = (str: string) => {
 };
 
 export function parseMessage(message: { content: string; role: any; id: string }) {
-    if (message.content.startsWith('{') && !message.content.includes('}]}')) {
+    if (!message?.content) return null;
+    if (message?.content.startsWith('{') && !message?.content.includes('}]}')) {
         return {
             ...message,
             content: ''
         }
     }
-    const splitMessage = message.content.split('}]}');
+    const splitMessage = message?.content.split('}]}');
     if (splitMessage.length > 1 && message.role === 'assistant') {
         return {
             ...message,
@@ -34,11 +35,14 @@ export function extractToolNames(jsonString: string) {
     const toolNames = [];
     let match;
 
+    // Reset lastIndex to 0
+    regex.lastIndex = 0;
+
     // Use regex.exec() to find all matches
     while ((match = regex.exec(jsonString)) !== null) {
         toolNames.push(match[1]);
     }
-    
+
     // Return the array of tool names
     return toolNames.length ? toolNames : null;
 }

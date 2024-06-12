@@ -10,6 +10,7 @@ import { extractToolNames, parseMessage } from '@/lib/utils';
 export default function Chat() {
     const { setToolsUsed } = useContext(ToolRagContext);
     const { input, handleInputChange, error, messages, handleSubmit, isLoading } = useChat();
+    console.log('messages', messages)
     const showThinking = useMemo(() => {
         return isLoading && messages[messages.length - 1]?.role === 'user';
     }, [isLoading, messages]);
@@ -23,8 +24,9 @@ export default function Chat() {
         const toolsUsed = messages
             .map(m => m.content)
             .filter(c => c.includes('tool_calls'))
-            .map(val => val.split('}]}')[0])
+            // .map(val => val.split('}]}')[0])
             .map(extractToolNames).flat()
+        console.log('tools used', toolsUsed)
         setToolsUsed(toolsUsed as any);
 
     }, [messages])
