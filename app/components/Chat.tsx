@@ -58,7 +58,7 @@ export default function Chat() {
                             </span>
                         </div>
                     )}
-                    {formattedMessages.map((m: Message) => (
+                    {formattedMessages.map((m: any) => (
                         <MessageComponent key={m.id} message={m} />
                     ))}
                     {showThinking && <MessageComponent showThinking />}

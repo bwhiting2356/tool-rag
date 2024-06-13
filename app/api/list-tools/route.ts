@@ -1,6 +1,6 @@
 import { tools } from '../tools';
 
-export const getOnlyToolNamesAndDescriptions = (tools: any) => {
+const getOnlyToolNamesAndDescriptions = (tools: any) => {
     const toolNamesAndDescriptions = [];
     for (const toolName in tools) {
         const toolDefinition = tools[toolName].function;
