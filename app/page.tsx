@@ -1,11 +1,13 @@
 'use client';
 
-import Explanation from './components/Explanation';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Chat from './components/Chat';
-import { ToolRagProvider } from './state/context';
 import { useEffect } from 'react';
 import Hotjar from '@hotjar/browser';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+import Explanation from './components/Explanation';
+import Chat from './components/Chat';
+import { ToolRagProvider } from './state/context';
+
 
 const queryClient = new QueryClient();
 
